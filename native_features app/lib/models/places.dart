@@ -12,7 +12,7 @@ class PlaceLocation {
 class Places {
   final String? id;
   final String? title;
-  final PlaceLocation location;
+  final PlaceLocation? location;
   final File? images;
 
   Places(
