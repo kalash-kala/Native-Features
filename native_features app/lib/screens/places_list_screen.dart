@@ -5,6 +5,7 @@ import 'package:native_features/providers/great_places.dart';
 import 'package:provider/provider.dart';
 
 import 'package:native_features/screens/add_place_screen.dart';
+import 'package:native_features/screens/places_detail_screen.dart';
 
 class PlacesListScreen extends StatelessWidget {
   const PlacesListScreen({Key? key}) : super(key: key);
@@ -42,6 +43,10 @@ class PlacesListScreen extends StatelessWidget {
                                 greatPlaces.items[index].images as File),
                           ),
                           title: Text(greatPlaces.items[index].title as String),
+                          subtitle: Text(greatPlaces.items[index].location!.address as String),
+                          onTap: (){
+                            Navigator.of(context).pushNamed(PlaceDetailScreen.routeName,arguments: greatPlaces.items[index].id);
+                          },
                         ),
                       ),
               ),
